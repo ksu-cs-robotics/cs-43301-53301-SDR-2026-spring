@@ -99,6 +99,58 @@ During this class, we are going to use [Ubuntu 18.04](https://ubuntu.com/downloa
   hdmi_mode=82
   ```
 
+#### 1.2 Mac (Apple Silicon) - UTM Virtual Machine (Ubuntu 22.04 LTS ARM64) <a name = "mac_utm"></a>
+If you are on an Apple Silicon Mac (M1/M2/M3/M4/M5), use UTM to run Ubuntu 22.04 LTS (Jammy) in a VM.
+
+**Downloads**
+- UTM: https://mac.getutm.app/ (also see https://github.com/utmapp/UTM)
+- (If creating manually) Ubuntu 22.04 LTS ARM64 server ISO (Jammy): https://cdimage.ubuntu.com/releases/jammy/release/
+
+**Step 1: Install UTM**
+1. Download UTM from the site above and drag it into your Applications folder.
+2. Launch UTM and finish the initial setup prompts.
+
+**Recommended**
+- Download the pre-made VM image here: https://drive.google.com/file/d/1UuV1H5NJpqLvvxisugsIbIEiUMPUkZcf/view?usp=sharing
+- Unzip it in the download location.
+- Open UTM, "Create a New Virtual Machine", "Open".
+- Select and open the .utm file.
+- Password for the VM: discovery
+
+**(If installing manually) Step 2: Download Ubuntu 22.04 LTS ARM64**
+1. From the Jammy release page, download `ubuntu-22.04.5-live-server-arm64.iso`.
+2. Keep the ISO in a known location (e.g., `~/Downloads`).
+
+**Step 3: Create the VM**
+1. Open UTM and select **Create a New Virtual Machine**.
+2. Choose **Virtualize** (not Emulate), then **Linux**, and **ARM64**.
+3. Select the Ubuntu ARM64 ISO as the boot image.
+4. Suggested resources: 6+ CPU cores, 8+ GB RAM, 64+ GB disk.
+5. Finish the wizard and start the VM.
+
+**Step 4: Install Ubuntu**
+1. Follow the Ubuntu installer to complete the server install.
+2. Reboot into the installed system when prompted.
+
+**Step 5: Install GUI + Guest Tools (run inside Ubuntu)**
+Create a script and run it to install the desktop environment and guest tools.
+```
+$ cat <<'EOF' > install-ubuntu-desktop.sh
+#!/usr/bin/env bash
+set -e
+
+sudo apt update
+sudo apt install -y tasksel ubuntu-desktop
+sudo apt install -y spice-vdagent spice-webdavd
+
+echo "Rebooting to apply desktop/guest tools..."
+sudo reboot now
+EOF
+
+$ chmod +x install-ubuntu-desktop.sh
+$ ./install-ubuntu-desktop.sh
+```
+
 ## 🏁 2. ROS Installation <a name = "rosinstall"></a>
 
 ROS(Robot Operating System) is a popular framework for building the software for robot now adays, which we will also use it to build our Robot.
@@ -183,6 +235,49 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
 sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+```
+
+### 2.4 Ubuntu 22.04 & ROS 2 Humble (Recommended for Apple Silicon VM)
+Official guide: https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html
+
+Create a script and run it inside Ubuntu 22.04:
+```
+$ cat <<'EOF' > install-ros2-humble.sh
+#!/usr/bin/env bash
+set -e
+
+sudo apt update
+sudo apt install -y locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+sudo apt install -y software-properties-common
+sudo add-apt-repository universe
+
+sudo apt update
+sudo apt install -y curl
+ROS_APT_SOURCE_VERSION="$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')"
+curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb"
+sudo dpkg -i /tmp/ros2-apt-source.deb
+
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install -y ros-humble-desktop ros-dev-tools
+
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+echo "ROS 2 Humble installed. Open a new terminal or source ~/.bashrc"
+EOF
+
+$ chmod +x install-ros2-humble.sh
+$ ./install-ros2-humble.sh
+$ source /opt/ros/humble/setup.bash
+$ sudo add-apt-repository ppa:openrobotics/gazebo11-non-amd64
+$ sudo apt update
+$ sudo apt install -y gazebo*
 ```
 
 ## 👨🏻‍💻 3. Software Setup <a name = "software"></a>

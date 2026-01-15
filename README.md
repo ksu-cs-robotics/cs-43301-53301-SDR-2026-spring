@@ -33,14 +33,14 @@
 |e-mail:|jkim72@kent.edu|
 |Office Hours:|Monday and Wednesday: <br/> 10:30 AM - 11:00 AM (MSB 104) <br/> 12:15 PM ~ 13:30 PM (MSB 236-A) <br/> Other times by appointment|
 |---|---|
-|Teaching Assistant:|Xiangxu Lin|
-|TA-Office Hours:|By email appointment|
-|TA-Email:|xlin10@kent.edu|
+|Teaching Assistant:|Marcus Arnett|
+|TA-Office Hours:|By email appointment, or drop-in every Wednesday from 2-3 PM EST (MSB 236)|
+|TA-Email:|marnett5@kent.edu|
 
 ### Prerequisite:
 C or better in CS 13001 Computer Programming <br/>
 C or better in CS 23001 Data Structure <br/>
-C or better in CS 33201 Embedded System Programming (from 2020 Spring) <br/>
+C or better in CS 33201 Embedded System Programming (from 2026 Spring) <br/>
 
 ### Credits:
 3 (The course satisfies a requirement for the Computer Science major and minor/ CS Graduate)
@@ -166,31 +166,33 @@ Students will be evaluated based on the following course activities and graded b
 1. **Class participation and preparation**
     - Class participation and regular attendance are expected. If a student misses a class, the student is responsible for bringing herself/himself up-to-date on class material and assignments. If you miss more than 4 classes without a documented reason or without making prior arrangements with me, your final grade will be dropped one grade (A to B, B+ to C+ and so on).
     - All students are expected to read the assigned chapters prior to coming to class.
-1. **Exams**
+2. **Exams**
     - Exams will be based on the combination of: material covered in lectures, the assigned reading from the reference papers/textbooks and material covered in the notes.
     - All exams are closed books and closed notes.
-1. **Homework assignments**
+3. **Homework assignments**
     - All homework assignments must be returned through the Blackboard LEARN. If the instructor requests to return an assignment directly in class, the assignment is due at the beginning of class on the specified date. Assignments turned in after the beginning of class on the due date will be counted as one day late and will receive 3 points of penalty.
     - Late penalty will be applied to all the assignment returned late. An assignment turned in n days late will get 3*n points deduction. An assignment cannot be more than 7 days late. After the 7th day the assignment will not be accepted.
     - All assignments must be individually and independently completed. Should two or more students turn in substantially the same solution or program, in the judgment of the instructor, the solution will be considered a group effort. All involved in group effort homework will receive a zero grade for that assignment. (See more details on cheating and plagiarism in the Academic Honesty Policy section below).
     - You may discuss the interpretation of an assignment with your classmates; however you may not discuss possible solutions unless you are requested by your teacher to share your solution with your colleagues.
     - No late assignment will be accepted after the assignment is graded and solution discussed.
-1. **Make-up exams**
+4. **Make-up exams**
     - Make-up exams will only be given in case of serious need and only when the instructor is notified prior to the exam time. If this is not done, the grade is automatically 0 for that exam.
     - Written verification for the student’s inability to take an exam will be required.
-1. **Class cancellation & Campus closings**
+5. **Class cancellation & Campus closings**
     - Announcements of class cancellations and/or campus closings will be made on the campus homepage. In the case of an emergency, weather-related or otherwise, please check the web page at www.kent.edu for information on the buildings and times of the closing. While information may be broadcast by radio and television, this should be confirmed by the web page, which is the official announcement of the campus and which will be the information used to determine issues related to student attendance, rescheduling of tests, and other concerns.
     - If I need to cancel class for any reason, I will try to put an announcement on the course web page as early as possible.
-1. **Course Withdrawal**
+6. **Course Withdrawal**
     - If you are considering withdrawing from this course, please consult with a staff member in the Student Services Office, 134 Main Hall. Withdrawal from a course can affect financial aid, student status, or progress within your major. For withdrawal deadlines, please refer to: http://www.kent.edu/registrar/spring-important-dates.
-1. **Academic Honesty**
+7. **Academic Honesty**
     - Use of the intellectual property of others without attributing it to them is considered a serious academic offense. Cheating or plagiarism will result in a failing grade for the work or for the entire course. Repeat offenses result in dismissal from the University. University guidelines require that all infractions be reported to the Student Conduct Officer on our campus. Kent State University policy on academic honesty can be found at: http://www.kent.edu/plagiarism
-1. **Students with Disabilities**
+8. **Students with Disabilities**
     - University policy 3-01.3 requires that students with disabilities be provided reasonable accommodations to ensure their equal access to course content. If you have a documented disability and require accommodations, please contact the instructor at the beginning of the semester to make arrangements for necessary classroom adjustments. Please note, you must first verify your eligibility for these through Student Accessibility Services (contact 330-672-3391 or visit http://www.kent.edu/sas for more information on registration procedures).
-1. **Conduct**
+9. **Conduct**
     - Students and faculty behavior at the Kent State University is governed by the guidelines summarized in the Code of Conduct page that you can find at
 http://www.kent.edu/studentconduct/code-studentconduct.
-1. **Emergency**
+10. **Emergency**
     - In case of an emergency please contact the security on campus.
       - Pick up the receiver of any blue-light phone on campus
       - Security cell phone (330) 672-2212 or, of course, 911.
+11. **Use of Generative AI**
+    - As per University Policy (https://www.kent.edu/today/news/adding-ai-cheating-and-plagiarism-policy), this course will allow students to utilize generative AI models to aid them with assigned homework and projects. However, we encourage the students to attempt the problems by themselves first before consulting with a Gererative AI model to better understand the material assigned to them. As well, we also encourage the students to double check the output the model generates to verify that the output is correct, aligns with the assigned task(s), and to check for any plagiarism.
